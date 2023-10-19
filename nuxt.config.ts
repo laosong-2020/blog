@@ -15,13 +15,21 @@ export default defineNuxtConfig({
   },
   // https://content.nuxtjs.org
   content: {
-    documentDriven: false,
     highlight: {
-      // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
       theme: {
-        dark: 'github-dark',
-        light: 'github-light'
+        default: 'github-light',
+        dark: 'material-theme-palenight',
       }
-    }
+      ,
+      preload: ['java'] },
+    markdown: {
+      toc: {
+        depth: 5, searchDepth: 5
+      },
+      anchorLinks: false,
+      remarkPlugins: {
+        'remark-reading-time': {},
+      },
+    },
   }
 })
