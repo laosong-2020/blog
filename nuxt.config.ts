@@ -9,7 +9,9 @@ export default defineNuxtConfig({
   ],
   // https://color-mode.nuxtjs.org
   colorMode: {
-    classSuffix: ''
+    preference: 'dark', // default theme
+    dataValue: 'theme', // activate data-theme in <html> tag
+    classSuffix: '',
   },
   // https://content.nuxtjs.org
   content: {
@@ -18,8 +20,7 @@ export default defineNuxtConfig({
       // See the available themes on https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-theme
       theme: {
         dark: 'github-dark',
-        dracula: 'dracula-soft',
-        default: 'github-light'
+        light: 'github-light'
       }
     }
   }

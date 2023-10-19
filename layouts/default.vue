@@ -1,6 +1,6 @@
 
 <script lang="ts" setup>
-import AppNavbar from '~/components/AppNavbar.vue';
+import AppNavbar from '~/components/navBar/AppNavbar.vue';
 
 </script>
 
