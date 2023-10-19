@@ -26,22 +26,39 @@ const handleScroll = () => {
     </div>
     <div class="navbar-center">
       <NuxtLink to="/">
-        <a class="btn btn-ghost normal-case text-2xl">Zhenlei's Blog</a>
+        <a class="btn btn-ghost normal-case text-2xl text-gray-800 dark:text-gray-200">Zhenlei's Blog</a>
       </NuxtLink>
       
     </div>
     <div class="navbar-end">
-      <ul class="menu menu-horizontal bg-base-200 rounded-box">
-        <li>
-          <a v-if="appConfig.socials?.github" :href="`https://github.com/${appConfig.socials?.github}`" title="GitHub" class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300"><Icon name="mdi:github" class="w-8 h-8" /></a>
-        </li>
-        <li>
-          <a v-if="appConfig.socials?.linkedin" :href="`https://linkedin.com/in/${appConfig.socials?.linkedin}`" title="LinkedIn" class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300"><Icon name="mdi:linkedin" class="w-8 h-8" /></a>
-        </li>
-        <li>
-          <ThemeSelect class="dark:text-gray-100 hover:text-gray-700 dark:hover:text-gray-300" />
-        </li>
-      </ul>
+      <div class="flex">
+        <!--
+          <div class="flex-auto">
+          <a 
+            v-if="appConfig.socials?.github" 
+            :href="`https://github.com/${appConfig.socials?.github}`" 
+            title="GitHub" 
+            class="text-gray-800 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300"
+          >
+            <Icon name="mdi:github" class="text-4xl" />
+          </a>
+        </div>
+        <div class="flex-auto">
+          <a 
+            v-if="appConfig.socials?.linkedin" 
+            :href="`https://linkedin.com/in/${appConfig.socials?.linkedin}`" 
+            title="LinkedIn" 
+            class="text-gray-800 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300"
+          >
+            <Icon name="mdi:linkedin" class="text-4xl text-gray-800 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300" />
+          </a>
+        </div>
+        -->
+        
+        <div class="flex-auto">
+          <ThemeSelect />
+        </div>
+      </div>
     </div>
   </header>
 </template>
