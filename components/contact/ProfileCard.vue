@@ -1,0 +1,35 @@
+<script setup lang="ts">
+const appConfig = useAppConfig()
+import ContactLink from '~/components/contact/ContactLink.vue'
+</script>
+
+<template>
+  <div class="card bg-base-100 mb-4">
+    <div class="card-body">
+      <h2 class="card-title text-4xl">Contact</h2>
+      <p class="text-xl">
+        Please contact me through email or social media if you have any questions or suggestions by clicking the icons below...
+      </p>
+      <div class="mt-2 flex text-3xl space-x-2">
+        <ContactLink
+          v-if="appConfig.socials?.email"
+          icon="ic:outline-email"
+          :href="`mailto:${appConfig.socials?.email}`"
+          tooltip="email"
+        />
+        <ContactLink
+          v-if="appConfig.socials?.github"
+          icon="ri:github-fill"
+          :href="appConfig.socials?.github"
+          tooltip="Github"
+        />
+        <ContactLink
+          v-if="appConfig.socials?.linkedin"
+          icon="ri:linkedin-fill"
+          :href="appConfig.socials?.linkedin"
+          tooltip="Linkedin"
+        />
+      </div>
+    </div>
+  </div>
+</template>

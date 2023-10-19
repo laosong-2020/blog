@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const route = useRoute()
+import ProfileCard from '~/components/contact/ProfileCard.vue'
+
 definePageMeta({
     layout: 'default',
     scrollToTop: true,
@@ -7,7 +9,8 @@ definePageMeta({
 </script>
 
 <template>
-  <main class="space-y-4">
-    
-  </main>
+  <div class="max-w-7xl mx-auto">
+    <ProfileCard />
+    <!--    <RequestCard />-->
+  </div>
 </template>

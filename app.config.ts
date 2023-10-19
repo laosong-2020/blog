@@ -4,5 +4,6 @@ export default defineAppConfig({
   socials: {
     github: 'laosong-2020',
     linkedin: 'zhenleisong',
+    email: 'songzl0606@gmail.com',
   }
 })
