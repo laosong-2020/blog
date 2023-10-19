@@ -1,11 +1,11 @@
 
 <script lang="ts" setup>
-import AppNavbar from '~/components/navBar/AppNavbar.vue';
+import HomeNavBar from '~/components/navBar/HomeNavBar.vue';
 
 </script>
 
 <template>
-  <AppNavbar />
+  <HomeNavBar />
   <slot />
 </template>
 

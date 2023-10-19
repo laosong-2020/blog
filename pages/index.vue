@@ -3,7 +3,7 @@ const route = useRoute()
 import Hero from '../components/home/Hero.vue';
 import Blogs from '../components/home/Blogs.vue';
 definePageMeta({
-  layout: 'default',
+  layout: 'home',
   scrollToTop: true,
 })
 </script>

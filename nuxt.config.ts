@@ -27,9 +27,6 @@ export default defineNuxtConfig({
         depth: 5, searchDepth: 5
       },
       anchorLinks: false,
-      remarkPlugins: {
-        'remark-reading-time': {},
-      },
     },
   }
 })

@@ -1,5 +1,5 @@
 <template>
-  <div class="hero min-h-screen bg-black">
+  <div class="hero min-h-screen bg-gray-100 dark:bg-gray-900">
     <div class="hero-content flex-col lg:flex-row-reverse">
       <img src="../../images/hero-avatar.jpg" class="max-w-sm rounded-lg shadow-2xl" />
       <div>
