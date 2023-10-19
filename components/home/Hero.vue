@@ -5,7 +5,11 @@
       <div>
         <h1 class="text-5xl font-bold">Hi all, I'm Zhenlei!</h1>
         <p class="py-6">A Ph.D candidate in GIScience, A passionate Full Stack Software Developer 🚀 having an experience of building Web applications with Django, Vue, React and some other cool libraries and frameworks.</p>
-        <button class="btn btn-primary">Get Started</button>
+        <NuxtLink to='/contact'>
+          <button class="btn btn-primary mt-4">
+            Contact Me
+          </button>
+        </NuxtLink>
       </div>
     </div>
   </div>

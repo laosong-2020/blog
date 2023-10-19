@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const route = useRoute()
-import Hero from '~/components/home/Hero.vue'
+import Hero from '..//components/home/Hero.vue';
 
 definePageMeta({
   layout: 'default',

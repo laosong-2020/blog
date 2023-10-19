@@ -12,7 +12,10 @@ const route = useRoute()
       <SideDropdown />
     </div>
     <div class="navbar-center">
-      <a class="btn btn-ghost normal-case text-xl">Zhenlei's Blog</a>
+      <NuxtLink to="/">
+        <a class="btn btn-ghost normal-case text-2xl">Zhenlei's Blog</a>
+      </NuxtLink>
+      
     </div>
     <div class="navbar-end">
       <ul class="menu menu-horizontal bg-base-200 rounded-box">
