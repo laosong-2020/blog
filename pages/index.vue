@@ -11,5 +11,6 @@ definePageMeta({
 <template>
   <main class="space-y-4">
     <Hero />
+    <Hero />
   </main>
 </template>
