@@ -1,6 +1,6 @@
 export default defineAppConfig({
   // Configure Content Wind here
-  cover: '/cover.jpg',
+  cover: 'assets/cover.jpg',
   socials: {
     github: 'laosong-2020',
     linkedin: 'zhenleisong',

@@ -5,13 +5,17 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     'nuxt-icon',
-    '@nuxthq/studio'
+    '@nuxthq/studio',
+    '@nuxt/image-edge'
   ],
   // https://color-mode.nuxtjs.org
   colorMode: {
     preference: 'dark', // default theme
     dataValue: 'theme', // activate data-theme in <html> tag
     classSuffix: '',
+  },
+  image: {
+    provider: 'netlify',
   },
   // https://content.nuxtjs.org
   content: {
