@@ -9,21 +9,21 @@ const appConfig = useAppConfig()
   <div class="flex items-center justify-center mb-4">
     <div class="mt-2 flex text-3xl space-x-2">
       <ContactLink
-          v-if="appConfig.socials?.email"
+          v-if="appConfig.profile?.email"
           icon="ic:outline-email"
-          :href="`mailto:${appConfig.socials?.email}`"
+          :href="`mailto:${appConfig.profile?.email}`"
           tooltip="email"
         />
         <ContactLink
-          v-if="appConfig.socials?.github"
+          v-if="appConfig.profile.socials?.github"
           icon="ri:github-fill"
-          :href="appConfig.socials?.github"
+          :href="appConfig.profile.socials?.github"
           tooltip="Github"
         />
         <ContactLink
-          v-if="appConfig.socials?.linkedin"
+          v-if="appConfig.profile.socials?.linkedin"
           icon="ri:linkedin-fill"
-          :href="appConfig.socials?.linkedin"
+          :href="appConfig.profile.socials?.linkedin"
           tooltip="Linkedin"
         />
     </div>
