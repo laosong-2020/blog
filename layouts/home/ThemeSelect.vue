@@ -20,7 +20,9 @@ const handleClick = async (newTheme?: string) => {
 <template>
   <div class="dropdown dropdown-bottom">
     <label v-if="!isIcon" :tabIndex="0" class="btn btn-ghost btn-sm">
-      <Icon class="text-2xl text-gray-800 dark:text-gray-200" icon="mdi:theme-light-dark" />
+      <!--
+        <Icon class="text-2xl text-gray-800 dark:text-gray-200" icon="mdi:theme-light-dark" />
+      -->
       <span class="text-lg capitalize text-gray-800 dark:text-gray-200">
         Themes
       </span>

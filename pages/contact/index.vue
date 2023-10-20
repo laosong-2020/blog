@@ -1,7 +1,8 @@
 <script setup lang="ts">
-const route = useRoute()
 import ProfileCard from '~/components/contact/ProfileCard.vue'
 
+const router = useRouter()
+const route = useRoute()
 </script>
 
 <template>

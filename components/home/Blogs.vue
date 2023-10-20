@@ -21,7 +21,7 @@ const { data: blogList } = await useAsyncData<BlogList[] >('blogs', async () => 
         Latest Posts
       </h2>
       <div class="mx-auto"/>
-      <NuxtLink to="/blogs">
+      <a href="/blogs">
         <button
           class="btn btn-primary btn-ghost btn-sm"
           type="button"
@@ -29,12 +29,12 @@ const { data: blogList } = await useAsyncData<BlogList[] >('blogs', async () => 
           <h2 class="text-lg font-bold text-gray-800 dark:text-gray-200 capitalize">
             More
           </h2>
-          <Icon
+            <Icon
             class="text-lg text-gray-800 dark:text-gray-200"
             icon="material-symbols:arrow-forward"
           />
         </button>
-      </NuxtLink>
+      </a>
     </div>
     <p class="text-gray-700 dark:text-gray-300">
       Blogs Description

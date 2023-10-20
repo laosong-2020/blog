@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import ThemeSelect from './ThemeSelect.vue'
-import MenuItem from './MenuItem.vue'
+import HomeMenuItem from '~/layouts/home/MenuItem.vue'
 const isScrolled = ref(false)
-
+const route = useRoute()
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0
 }
@@ -11,6 +11,11 @@ const handleScroll = () => {
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
 </script>
 <template>
   <header 
@@ -18,7 +23,8 @@ onMounted(() => {
     :class="{
       'bg-transparent': !isScrolled,
       'shadow-xl': isScrolled,
-    }">
+    }"
+  >
     <div class="navbar-start">
     </div>
     <div class="navbar-center">
@@ -32,30 +38,24 @@ onMounted(() => {
         <div class="flex-auto">
           <div class="ml-auto" />
           <div class="space-x-4 hidden lg:flex lg:mr-2">
-            <MenuItem
-              :is-scrolled="isScrolled"
-              to="/"
-            >
-              home
-            </MenuItem>
-            <MenuItem
+            <HomeMenuItem
               :is-scrolled="isScrolled"
               to="/blogs"
             >
-              blogs
-            </MenuItem>
+              <span>blogs</span>
+            </HomeMenuItem>
             <!--        <MenuItem-->
             <!--          :is-scrolled="isScrolled"-->
             <!--          to="/showcases"-->
             <!--        >-->
             <!--          showcases-->
             <!--        </MenuItem>-->
-            <MenuItem
+            <HomeMenuItem
               :is-scrolled="isScrolled"
               to="/contact"
             >
-              contact
-            </MenuItem>
+              <span>contact</span>
+            </HomeMenuItem>
             <ThemeSelect />
           </div>
           

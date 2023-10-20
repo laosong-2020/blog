@@ -1,7 +1,7 @@
 
 <script lang="ts" setup>
 import NavBar from '~/layouts/home/Header.vue';
-
+const route = useRoute();
 </script>
 
 <template>

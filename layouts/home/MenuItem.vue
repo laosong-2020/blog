@@ -1,19 +1,18 @@
 <script setup lang="ts">
 interface Props {
   to: string,
-  isScrolled: boolean
+  isScrolled: boolean,
+  query?: Record<string, any>,
 }
 defineProps<Props>()
 </script>
 <template>
-  <NuxtLink
+  <a 
     class="capitalize font-black"
     :class="{
       'text-white': !isScrolled,
     }"
-    :to="{
-      path: to,
-    }"
+    :href="to"
   >
     <button
       class="btn btn-primary btn-ghost btn-sm"
@@ -23,5 +22,5 @@ defineProps<Props>()
         <slot />
       </span>
     </button>
-  </NuxtLink>
+  </a>
 </template>
