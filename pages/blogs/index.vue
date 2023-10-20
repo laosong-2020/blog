@@ -1,19 +1,47 @@
 <script lang="ts" setup>
-  import BlogList from '~/components/blogs/BlogList.vue';
-  definePageMeta({
-  layout: 'home',
-  scrollToTop: true,
-})
+  import BlogCard from '~/components/blogs/BlogCard.vue';
+  import { BlogList } from '~/types/blogs';
+  const disPlayLimit = 16
+
+  const router = useRouter()
+  const route = useRoute()
+  const runtimeConfig = useRuntimeConfig()
+
+  //get blog list
+  const { data } = await useAsyncData<{
+    list: BlogList[]
+  }>('blogs', async () => {
+    //blogs
+    const list = await queryContent<BlogList>('blogs/')
+      .sort({ date: -1 })
+      .limit(disPlayLimit)
+      .find()
+
+    return {
+      list,
+    }
+  })
+  
 </script>
 <template>
-  <main class="px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 bg-gray-100 dark:bg-gray-900">
-    <div class="mx-auto max-w-lg lg:max-w-7xl bg-transparent">
-      <div class="border-b border-b-gray-200 pb-6">
-        <h2 class="text-3xl font-extrabold tracking-tight text-gray-800 dark:text-gray-300 sm:text-4xl">
-          Posts
-        </h2>
-      </div>
-      <BlogList />
+  <div class="max-w-7xl mx-auto">
+    <div 
+      v-if="data?.list && data?.list.length > 0"
+      class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-0 md:py-4 md:p-0"
+    >
+      <BlogCard
+        v-for="blog in data?.list || []"
+        :key="blog._path"
+        :blog="blog"
+      />
     </div>
-  </main>
+    <div 
+      v-else
+      class="flex justify-center items-center h-64"
+    >
+      <div class="text-4xl font-bold capitalize">
+        No blog found
+      </div>
+    </div>
+  </div>
 </template>

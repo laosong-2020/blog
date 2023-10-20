@@ -1,12 +1,26 @@
 
 <script lang="ts" setup>
-import HomeNavBar from '~/components/navBar/HomeNavBar.vue';
+import NavBar from '~/layouts/home/Header.vue';
 
 </script>
 
 <template>
-  <HomeNavBar />
-  <slot />
+  <div class="drawer lg:draw-open">
+    <input
+      id="default-layout-drawer"
+      type="checkbox"
+      class="drawer-toggle"
+    >
+    <div
+      id="base-content"
+      class="drawer-content relative min-h-screen flex flex-col bg-base-200/30"
+    >
+      <NavBar />
+      <div class="flex-grow p-2 lg:p-4">
+        <slot />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style>
