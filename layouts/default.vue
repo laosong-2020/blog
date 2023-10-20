@@ -29,3 +29,8 @@ import Header from '~/layouts/default/Header.vue'
     </div>
   </div>
 </template>
+<style>
+section {
+  @apply max-w-7xl mx-auto px-2 lg:px-0 lg:py-4;
+}
+</style>

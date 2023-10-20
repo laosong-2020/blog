@@ -20,7 +20,6 @@ onMounted(() => {
       'shadow-xl': isScrolled,
     }">
     <div class="navbar-start">
-      <SideDropdown />
     </div>
     <div class="navbar-center">
       <NuxtLink to="/">

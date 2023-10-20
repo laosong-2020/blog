@@ -1,7 +1,6 @@
 <script setup lang="ts">
 interface Props {
   to: string,
-  query?: Record<string, any>
   isScrolled: boolean
 }
 defineProps<Props>()
@@ -14,7 +13,6 @@ defineProps<Props>()
     }"
     :to="{
       path: to,
-      query,
     }"
   >
     <button
