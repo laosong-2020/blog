@@ -6,13 +6,14 @@ const router = useRouter();
 <template>
   <section>
     <div class="hero min-h-screen bg-transparent">
-      <div class="hero-content flex-col lg:flex-row-reverse">
+      <div class="hero-content space-x-8 lg:flex-row flex-col ">
         <!--
           <img src="~/assets/hero-avatar.jpg" class="max-w-sm rounded-lg shadow-2xl" />
         -->
         <ClientOnly>
           <Vue3Lottie
             animationLink="https://lottie.host/3c06fb22-0ff0-459f-915e-3a82bc036284/Kvv56xo0to.json"
+            :scale=1.5
           />
         </ClientOnly>
         <div>
