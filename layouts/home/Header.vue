@@ -19,7 +19,7 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <header 
-    class="navbar bg-base-100 fixed z-10 top-0 transition duration-500 ease-in-out"
+    class="navbar bg-base-300 fixed z-10 top-0 transition duration-500 ease-in-out"
     :class="{
       'bg-transparent': !isScrolled,
       'shadow-xl': isScrolled,

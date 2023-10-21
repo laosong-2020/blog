@@ -22,7 +22,7 @@ const isNew = computed(() => {
 })
 </script>
 <template>
-  <div class="card rounded hover:scale-105 transition ease-in-out duration-300 shadow-xl bg-base-100 rounded-xl">
+  <div class="card rounded hover:scale-105 transition ease-in-out duration-300 shadow-xl bg-base-200 rounded-xl">
     <NuxtLink
       class="flex flex-col h-full"
       :to="{

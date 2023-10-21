@@ -13,7 +13,7 @@ const route = useRoute();
     >
     <div
       id="base-content"
-      class="drawer-content relative min-h-screen flex flex-col bg-base-200/30"
+      class="drawer-content relative max-h-full flex flex-col"
     >
       <NavBar />
       <div class="flex-grow p-2 lg:p-4">
