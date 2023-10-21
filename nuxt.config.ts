@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   },
   image: {
     provider: 'netlify',
+    dir: 'assets',
   },
   // https://content.nuxtjs.org
   content: {
