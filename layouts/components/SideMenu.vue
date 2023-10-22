@@ -32,7 +32,7 @@ const route = useRoute()
           <MenuItem
             to="/"
             icon="material-symbols:home-outline-rounded"
-            :active="route.name === 'index'"
+            :active="route.name.includes('index')"
           >
             <span>home</span>
           </MenuItem>
@@ -41,7 +41,7 @@ const route = useRoute()
           <MenuItem
             to="/blogs"
             icon="material-symbols:menu-rounded"
-            :active="route.name === 'blogs'"
+            :active="route.name.includes('blogs')"
           >
             <span>blogs</span>
           </MenuItem>
@@ -50,7 +50,7 @@ const route = useRoute()
           <MenuItem
             to="/contact"
             icon="mdi:donation-outline"
-            :active="route.name === 'contact'"
+            :active="route.name.includes('contact')"
           >
             <span>contact</span>
           </MenuItem>

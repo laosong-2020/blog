@@ -15,9 +15,11 @@ import ThemeSelect from '~/layouts/home/ThemeSelect.vue'
         />
       </span>
     </label>
-    <div class="text-3xl text-gray-800 dark:text-gray-200 capitalize font-bold truncate">
-      Zhenlei's Blog
-    </div>
+    <ClientOnly>
+      <div class="text-3xl text-gray-800 dark:text-gray-200 capitalize font-bold truncate">
+        Zhenlei's Blog
+      </div>
+  </ClientOnly>
     <div class="ml-auto" />
     <ThemeSelect 
       class="hidden lg:block"
