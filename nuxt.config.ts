@@ -21,13 +21,24 @@ export default defineNuxtConfig({
   // https://content.nuxtjs.org
   content: {
     highlight: {
-      theme: {
-        default: 'github-light',
-        light: 'github-light',
-        dark: 'github-dark',
-      }
-      ,
-      preload: ['java'] },
+      theme: 'dracula',
+      preload: [
+        'java',
+        'c',
+        'cpp',
+        'vue',
+        'html',
+        'css',
+        'python',
+        'ts',
+        'js',
+        'md',
+        'json',
+        'xml',
+        'yaml',
+        'yml',
+      ] 
+    },
     markdown: {
       toc: {
         depth: 5, searchDepth: 5

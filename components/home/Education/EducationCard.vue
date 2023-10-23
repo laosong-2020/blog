@@ -6,7 +6,7 @@ const Props = defineProps<{
 }>()
 </script>
 <template>
-  <div class="card rounded hover:scale-105 transition ease-in-out duration-300 shadow-xl bg-base-200 rounded-xl">
+  <div class="card rounded mx-16 hover:scale-105 transition ease-in-out duration-300 shadow-xl bg-base-200 rounded-xl">
     <div class="flex justify-center items-center">
         <div class="basis-1/4">
           <NuxtImg

@@ -57,7 +57,10 @@ onMounted(() => {
           id="article"
           class="max-w-full"
           :value="page"
-        />
+        >
+          <ContentRendererMarkdown
+            :value="page" />
+        </ContentRenderer>
       </div>
     </div>
   </div>

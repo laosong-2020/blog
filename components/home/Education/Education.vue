@@ -8,7 +8,11 @@ const eduList = appConfig.education
 </script>
 <template>
   <section>
-    <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Education</h2>
+    <p 
+      class="text-4xl font-black text-gray-800 dark:text-gray-200"
+    >
+      Education
+    </p>
     <br />
     <div class="grid grid-cols-1 gap-6">
       <EducationCard 
