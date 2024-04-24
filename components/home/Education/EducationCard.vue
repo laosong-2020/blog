@@ -15,6 +15,7 @@ const Props = defineProps<{
         </div>
         <div class="basis-1/2">
           <div tabindex="0" class="collapse collapse-plus">
+            <input type="checkbox" className="peer" />
             <div class="collapse-title">
               <div class="flex flex-col justify-center items-start">
                 <p class="text-3xl font-bold text-gray-800 dark:text-gray-200">{{ eduInfo.schoolName }}</p>
