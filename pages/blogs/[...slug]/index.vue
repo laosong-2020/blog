@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { BlogList, BlogDetail, DefaultNuxtImageHeight } from '~/types/blogs'
-import BlogCard from '~/components/BlogCard.vue'
+import type { BlogDetail } from '~/types/blogs'
+import { DefaultNuxtImageHeight } from '~/types/blogs'
 
 const runtimeConfig = useRuntimeConfig()
 const route = useRoute()

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
-import { BlogList } from '~/types/blogs';
+import type { BlogList } from '~/types/blogs';
 import BlogCard from '~/components/blogs/BlogCard.vue';
 
 const LIMIT_CARDS = 3;

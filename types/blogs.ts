@@ -1,4 +1,4 @@
-import { MarkdownParsedContent, ParsedContent } from "@nuxt/content/dist/runtime/types";
+import type { MarkdownParsedContent, ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 export const DefaultNuxtImagePath = '/assets/images/nuxt.png'
 export const DefaultNuxtImageAlt = 'Nuxt Logo'

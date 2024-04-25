@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Experience } from '~/types/experience'
+import type { Experience } from '~/types/experience'
 const appConfig = useAppConfig()
 const Props = defineProps<{
   expInfo: Experience

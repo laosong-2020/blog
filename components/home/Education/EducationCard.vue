@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Education } from '~/types/education'
+import type { Education } from '~/types/education'
 const appConfig = useAppConfig()
 const Props = defineProps<{
   eduInfo: Education
