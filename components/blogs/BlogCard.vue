@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { BlogList, DefaultNuxtImagePath, DefaultNuxtImageAlt, DefaultNuxtImageHeight, DefaultNuxtImageWidth } from '~/types/blogs'
+import type { BlogList } from '~/types/blogs'
+import { DefaultNuxtImagePath, DefaultNuxtImageAlt, DefaultNuxtImageHeight, DefaultNuxtImageWidth } from '~/types/blogs'
 import dayjs from 'dayjs'
 import { Icon } from '@iconify/vue'
 const props = withDefaults(defineProps<{

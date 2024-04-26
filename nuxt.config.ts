@@ -15,8 +15,24 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   image: {
-    provider: 'netlify',
-    dir: 'assets',
+  },
+  app: {
+    head: {
+      link: [{
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css'
+      }]
+    }
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: tag => {
+        const arrTags = ['semantics', 'mrow', 'msup', 'mi', 'math']
+        const answ = arrTags.indexOf(tag.toLowerCase()) !== -1
+        console.log(tag+' :: '+ answ)
+        return answ
+      }
+    }
   },
   // https://content.nuxtjs.org
   content: {
@@ -44,6 +60,12 @@ export default defineNuxtConfig({
         depth: 5, searchDepth: 5
       },
       anchorLinks: false,
+      remarkPlugins: [
+        'remark-math'
+      ],
+      rehypePlugins: [
+        'rehype-katex'
+      ]
     },
   }
 })

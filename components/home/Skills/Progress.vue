@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Skill } from '~/types/skill'
+import type { Skill } from '~/types/skill'
 const appConfig = useAppConfig()
 const props = defineProps<{
   skill: Skill

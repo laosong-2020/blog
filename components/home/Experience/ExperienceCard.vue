@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Experience } from '~/types/experience'
+import type { Experience } from '~/types/experience'
 const appConfig = useAppConfig()
 const Props = defineProps<{
   expInfo: Experience
@@ -17,6 +17,7 @@ const Props = defineProps<{
       </div>
       <div class="basis-1/2">
         <div tabindex="0" class="collapse collapse-plus">
+          <input type="checkbox" className="peer" />
           <div class="collapse-title">
             <div class="flex flex-col justify-center items-start">
               <p class="text-3xl font-bold text-gray-800 dark:text-gray-200">
@@ -34,7 +35,17 @@ const Props = defineProps<{
             </div>
           </div>
           <div class="collapse-content">
-            <p>{{ expInfo.description }}</p>
+            <ul class="max-w-md space-y-1 text-gray-700 list-disc list-inside dark:text-gray-300">
+              <li>
+                {{ expInfo.description[0] }}
+              </li>
+              <li>
+                {{ expInfo.description[1] }}
+              </li>
+              <li>
+                {{ expInfo.description[2] }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>

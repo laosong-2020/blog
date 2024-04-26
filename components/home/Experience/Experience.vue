@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import ExperienceCard from './ExperienceCard.vue'
-import { Experience } from '~/types/experience'
 
 const appConfig = useAppConfig()
 const route = useRoute();

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import BlogCard from './BlogCard.vue'
-import { BlogList } from '~/types/blogs'
+import type { BlogList } from '~/types/blogs'
 
 const disPlayLimit = 16
 //get blog list
