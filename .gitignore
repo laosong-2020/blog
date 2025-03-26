@@ -14,3 +14,7 @@ dist
 
 # Local History
 .history
+
+# Test md files
+content/blogs/1.md
+content/blogs/2.md
