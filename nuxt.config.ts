@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-icon',
     '@nuxthq/studio',
-    '@nuxt/image',
     '@nuxtjs/sitemap',
   ],
   // https://color-mode.nuxtjs.org
@@ -14,9 +13,6 @@ export default defineNuxtConfig({
     preference: 'dark', // default theme
     dataValue: 'theme', // activate data-theme in <html> tag
     classSuffix: '',
-  },
-  image: {
-    provider: 'ipx',
   },
   app: {
     head: {
@@ -35,7 +31,34 @@ export default defineNuxtConfig({
   vue: {
     compilerOptions: {
       isCustomElement: tag => {
-        const arrTags = ['semantics', 'mrow', 'msup', 'mi', 'math']
+        const arrTags = [
+          'semantics',
+          'mrow',
+          'msup',
+          'mi',
+          'math',
+          'annotation',
+          'mn',
+          'mo',
+          'msub',
+          'mfrac',
+          'msqrt',
+          'mroot',
+          'munder',
+          'mover',
+          'munderover',
+          'mtext',
+          'mspace',
+          'menclose',
+          'mtable',
+          'mtr',
+          'mtd',
+          'maligngroup',
+          'malignmark',
+          'mpadded',
+          'mphantom',
+          'mglyph',
+        ]
         return arrTags.includes(tag.toLowerCase())
       },
     },
