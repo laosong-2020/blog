@@ -1,22 +1,18 @@
-import colors from 'tailwindcss/colors'
+// import colors from 'tailwindcss/colors'
 import typography from '@tailwindcss/typography'
 
 export default {
   darkMode: 'class',
-  plugins: [
-    typography(),
-    require('daisyui')
-  ],
+  plugins: [typography(), require('daisyui')],
 
   daisyui: {
-    themes: [
-      "light", "dark", "dracula"],
+    themes: ['light', 'dark', 'dracula'],
     darkTheme: 'dracula',
     base: true,
     styled: true,
     utils: true,
     rtl: false,
-    prefix: "",
+    prefix: '',
     logs: true,
-  }
+  },
 }

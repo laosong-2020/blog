@@ -1,4 +1,11 @@
 export default defineAppConfig({
+  // SEO and Site Configuration
+  seo: {
+    siteName: "Zhenlei Song's Blog",
+    description:
+      'A personal blog about technology, programming, GIS, and engineering by Zhenlei Song',
+    twitterHandle: '@zhenleisong',
+  },
   // Configure Content Wind here
   cover: 'assets/cover.jpg',
   profile: {
@@ -7,7 +14,7 @@ export default defineAppConfig({
     socials: {
       github: 'https://github.com/laosong-2020',
       linkedin: 'https://www.linkedin.com/in/zhenleisong/',
-    }
+    },
   },
   education: [
     {
@@ -33,7 +40,7 @@ export default defineAppConfig({
       date: 'Aug. 2021 - Present',
       imgSrc: '/logos/TAMULogo.png',
       description: 'GPA: 3.8/4.0',
-    }
+    },
   ],
   experience: [
     {
@@ -43,9 +50,9 @@ export default defineAppConfig({
       date: 'Jun. 2018 - Dec. 2019',
       imgSrc: '/logos/HuaweiLogo.png',
       description: [
-        "Developed LTE/NR L3 program with the focus on the UE mobility algorithm programming (UE access in, intra/inter frequency handover, redirection).",
-        "Conducted department continuous integration tasks such as compile scripts maintenance and troubleshooting errors for product-level development.",
-        "Debugged product-level abnormal rebooting errors based on log files, using GDB, decompiling to precisely find concerned code lines."
+        'Developed LTE/NR L3 program with the focus on the UE mobility algorithm programming (UE access in, intra/inter frequency handover, redirection).',
+        'Conducted department continuous integration tasks such as compile scripts maintenance and troubleshooting errors for product-level development.',
+        'Debugged product-level abnormal rebooting errors based on log files, using GDB, decompiling to precisely find concerned code lines.',
       ],
     },
     {
@@ -55,9 +62,9 @@ export default defineAppConfig({
       date: 'Jul. 2017 - Jun. 2018',
       imgSrc: '/logos/SercommLogo.png',
       description: [
-        "Developed security camera firmware program. The major task was based on TCP/IP communication.",
-        "Led software updating for migrating from H.264 to H.265 protocol.",
-        "Led the tuning tasks for the new-camera product during bring-up phase."
+        'Developed security camera firmware program. The major task was based on TCP/IP communication.',
+        'Led software updating for migrating from H.264 to H.265 protocol.',
+        'Led the tuning tasks for the new-camera product during bring-up phase.',
       ],
     },
   ],
@@ -85,6 +92,6 @@ export default defineAppConfig({
     {
       name: 'GIS',
       level: '70',
-    }
+    },
   ],
 })

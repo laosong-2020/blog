@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const appConfig = useAppConfig()
 import ContactLink from '~/components/contact/ContactLink.vue'
+const appConfig = useAppConfig()
 </script>
 
 <template>
@@ -9,7 +9,8 @@ import ContactLink from '~/components/contact/ContactLink.vue'
       <div class="card-body">
         <h2 class="card-title text-4xl text-gray-800 dark:text-gray-200">Contact</h2>
         <p class="text-xl text-gray-600 dark:text-gray-400">
-          Please contact me through email or social media if you have any questions or suggestions by clicking the icons below...
+          Please contact me through email or social media if you have any questions or suggestions
+          by clicking the icons below...
         </p>
         <div class="mt-2 flex text-3xl space-x-2">
           <ContactLink

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 interface Props {
-  to: string,
-  active: boolean,
-  query?: Record<string, any>
+  to: string
+  active: boolean
+  query?: Record<string, unknown>
 }
 
 defineProps<Props>()
@@ -13,7 +13,7 @@ defineProps<Props>()
     class="font-black capitalize px-0 text-lg"
     :to="{
       path: to,
-      query: query
+      query: query,
     }"
   >
     <div

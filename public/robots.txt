@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://szl-blog.netlify.app/sitemap.xml
+
+# Block common bot paths
+Disallow: /_nuxt/
+Disallow: /.nuxt/
+Disallow: /api/
+Disallow: /admin/

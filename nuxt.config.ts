@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-icon',
     '@nuxthq/studio',
-    '@nuxt/image-edge'
+    '@nuxt/image',
+    '@nuxtjs/sitemap',
   ],
   // https://color-mode.nuxtjs.org
   colorMode: {
@@ -15,24 +16,29 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   image: {
+    provider: 'ipx',
   },
   app: {
     head: {
-      link: [{
-        rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css'
-      }]
-    }
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'author', content: 'Zhenlei Song' },
+        { name: 'keywords', content: 'blog, technology, programming, GIS, engineering' },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css' },
+      ],
+    },
   },
   vue: {
     compilerOptions: {
       isCustomElement: tag => {
         const arrTags = ['semantics', 'mrow', 'msup', 'mi', 'math']
-        const answ = arrTags.indexOf(tag.toLowerCase()) !== -1
-        console.log(tag+' :: '+ answ)
-        return answ
-      }
-    }
+        return arrTags.includes(tag.toLowerCase())
+      },
+    },
   },
   // https://content.nuxtjs.org
   content: {
@@ -53,19 +59,24 @@ export default defineNuxtConfig({
         'xml',
         'yaml',
         'yml',
-      ] 
+      ],
     },
     markdown: {
       toc: {
-        depth: 5, searchDepth: 5
+        depth: 5,
+        searchDepth: 5,
       },
       anchorLinks: false,
-      remarkPlugins: [
-        'remark-math'
-      ],
-      rehypePlugins: [
-        'rehype-katex'
-      ]
+      remarkPlugins: ['remark-math'],
+      rehypePlugins: ['rehype-katex'],
     },
-  }
+  },
+  // SEO Configuration
+  site: {
+    url: 'https://szl-blog.netlify.app',
+    name: "Zhenlei Song's Blog",
+  },
+  sitemap: {
+    sources: ['/api/__sitemap__/urls'],
+  },
 })

@@ -1,0 +1,14 @@
+import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
+
+export default createConfigForNuxt({
+  features: {
+    tooling: true,
+    stylistic: false,
+  },
+}).append({
+  rules: {
+    'no-console': 'warn',
+    'vue/multi-word-component-names': 'off',
+    'vue/no-multiple-template-root': 'off',
+  },
+})

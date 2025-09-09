@@ -1,20 +1,12 @@
-
 <script lang="ts" setup>
-import NavBar from '~/layouts/home/Header.vue';
-const route = useRoute();
+import NavBar from '~/layouts/home/Header.vue'
+// const _route = useRoute();
 </script>
 
 <template>
   <div class="drawer lg:draw-open">
-    <input
-      id="default-layout-drawer"
-      type="checkbox"
-      class="drawer-toggle"
-    >
-    <div
-      id="base-content"
-      class="drawer-content relative max-h-full flex flex-col"
-    >
+    <input id="default-layout-drawer" type="checkbox" class="drawer-toggle" />
+    <div id="base-content" class="drawer-content relative max-h-full flex flex-col">
       <NavBar />
       <div class="flex-grow p-2 lg:p-4">
         <slot />

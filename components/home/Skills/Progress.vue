@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Skill } from '~/types/skill'
-const appConfig = useAppConfig()
-const props = defineProps<{
+// const appConfig = useAppConfig()
+const _props = defineProps<{
   skill: Skill
 }>()
 </script>
@@ -10,11 +10,6 @@ const props = defineProps<{
     <p>
       {{ skill.name }}
     </p>
-    <progress 
-      class="progress progress-success"
-      :value="skill.level"
-      max="100"
-    >
-    </progress>
+    <progress class="progress progress-success" :value="skill.level" max="100" />
   </div>
 </template>
