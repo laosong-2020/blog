@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
 import ThemeSelect from './ThemeSelect.vue'
-import HomeMenuItem from '~/layouts/home/MenuItem.vue'
+
 const isScrolled = ref(false)
-const route = useRoute()
+
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0
 }
@@ -15,52 +14,37 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
 })
-
 </script>
+
 <template>
-  <header 
-    class="navbar bg-base-300 fixed z-10 top-0 transition duration-500 ease-in-out"
-    :class="{
-      'bg-transparent': !isScrolled,
-      'shadow-xl': isScrolled,
-    }"
+  <header
+    class="navbar fixed z-10 top-0 h-14 px-6 transition-all duration-300"
+    :class="isScrolled
+      ? 'bg-base-100/95 backdrop-blur-md shadow-sm border-b border-base-300'
+      : 'bg-transparent'"
   >
-    <div class="navbar-start">
-    </div>
-    <div class="navbar-center">
-      <NuxtLink to="/">
-        <a class="btn btn-ghost normal-case text-4xl text-gray-800 dark:text-gray-200">Zhenlei's Blog</a>
+    <div class="flex-1">
+      <NuxtLink
+        to="/"
+        class="text-xl font-semibold hover:opacity-70 transition-opacity"
+      >
+        Zhenlei's Blog
       </NuxtLink>
-      
     </div>
-    <div class="navbar-end">
-      <div class="flex">
-        <div class="flex-auto">
-          <div class="ml-auto" />
-          <div class="space-x-4 hidden lg:flex lg:mr-2">
-            <HomeMenuItem
-              :is-scrolled="isScrolled"
-              to="/blogs"
-            >
-              <span>blogs</span>
-            </HomeMenuItem>
-            <!--        <MenuItem-->
-            <!--          :is-scrolled="isScrolled"-->
-            <!--          to="/showcases"-->
-            <!--        >-->
-            <!--          showcases-->
-            <!--        </MenuItem>-->
-            <HomeMenuItem
-              :is-scrolled="isScrolled"
-              to="/contact"
-            >
-              <span>contact</span>
-            </HomeMenuItem>
-            <ThemeSelect />
-          </div>
-          
-        </div>
-      </div>
-    </div>
+    <nav class="flex items-center gap-1">
+      <NuxtLink
+        to="/blogs"
+        class="px-3 py-1.5 rounded-md text-sm font-medium text-base-content/60 hover:text-base-content hover:bg-base-200 transition-colors"
+      >
+        Blogs
+      </NuxtLink>
+      <NuxtLink
+        to="/contact"
+        class="px-3 py-1.5 rounded-md text-sm font-medium text-base-content/60 hover:text-base-content hover:bg-base-200 transition-colors"
+      >
+        Contact
+      </NuxtLink>
+      <ThemeSelect isIcon end />
+    </nav>
   </header>
 </template>

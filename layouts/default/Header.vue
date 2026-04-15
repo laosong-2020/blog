@@ -4,26 +4,17 @@ import ThemeSelect from '~/layouts/home/ThemeSelect.vue'
 </script>
 
 <template>
-  <header class="navbar bg-base-100 md:px-4">
+  <header class="navbar bg-base-100 border-b border-base-300 px-4 min-h-12 h-12">
     <label
       for="default-layout-drawer"
       class="btn btn-ghost btn-sm drawer-button lg:hidden"
     >
-      <span class="text-2xl">
-        <Icon 
-          icon="material-symbols:menu-rounded"
-        />
-      </span>
+      <Icon icon="material-symbols:menu-rounded" class="text-2xl" />
     </label>
-    <ClientOnly>
-      <div class="text-3xl text-gray-800 dark:text-gray-200 capitalize font-bold truncate">
+      <div class="text-xl font-semibold ml-1 truncate">
         Zhenlei's Blog
       </div>
-  </ClientOnly>
     <div class="ml-auto" />
-    <ThemeSelect 
-      class="hidden lg:block"
-      end
-    />
+    <ThemeSelect isIcon end />
   </header>
 </template>

@@ -5,7 +5,7 @@ import BlogCard from '~/components/blogs/BlogCard.vue';
 
 const LIMIT_CARDS = 3;
 
-const { data: blogList } = await useAsyncData<BlogList[] >('blogs', async () => queryContent<BlogList>('blogs/')
+const { data: blogList } = await useAsyncData<BlogList[]>('home-recent-blogs', async () => queryContent<BlogList>('blogs/')
   .sort({ date: -1 })
   .limit(LIMIT_CARDS)
   .find())
@@ -14,8 +14,7 @@ const { data: blogList } = await useAsyncData<BlogList[] >('blogs', async () => 
 <template>
   <section>
     <div
-      class="flex items-center animate__animated mb-1"
-      data-animate="animate__fadeInUp"
+      class="flex items-center mb-1"
     >
       <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 capitalize">
         Latest Posts
@@ -46,8 +45,6 @@ const { data: blogList } = await useAsyncData<BlogList[] >('blogs', async () => 
       <BlogCard
         v-for="blog in blogList"
         :key="blog._path"
-        class="animate__animated"
-        data-animate="animate__fadeIn"
         dense
         :blog="blog"
       />

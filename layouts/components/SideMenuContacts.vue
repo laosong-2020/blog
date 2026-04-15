@@ -7,7 +7,7 @@ const appConfig = useAppConfig()
 
 <template>
   <div class="flex items-center justify-center mb-4">
-    <div class="mt-2 flex text-3xl space-x-2">
+    <div class="mt-2 flex text-xl space-x-3">
       <ContactLink
           v-if="appConfig.profile?.email"
           icon="ic:outline-email"

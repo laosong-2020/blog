@@ -21,9 +21,15 @@ const { data } = await useAsyncData<{
 
 <template>
   <div class="mx-auto">
-    <div 
+    <div class="mb-8 pb-6 border-b border-base-300">
+      <h1 class="text-2xl font-bold">All Posts</h1>
+      <p v-if="data?.list" class="mt-1 text-sm text-base-content/50">
+        {{ data.list.length }} article{{ data.list.length !== 1 ? 's' : '' }}
+      </p>
+    </div>
+    <div
       v-if="data?.list && data?.list.length > 0"
-      class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-0 md:py-4 md:p-0"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
     >
       <BlogCard
         v-for="blog in data?.list || []"

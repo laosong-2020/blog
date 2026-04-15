@@ -23,7 +23,7 @@ const isNew = computed(() => {
 })
 </script>
 <template>
-  <div class="card rounded hover:scale-105 transition ease-in-out duration-300 shadow-xl bg-base-200 rounded-xl">
+  <div class="card h-full border border-base-300 shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-200 bg-base-100 rounded-xl">
     <NuxtLink
       class="flex flex-col h-full"
       :to="{
@@ -53,10 +53,10 @@ const isNew = computed(() => {
         />
       </div>
       <div class="card-body">
-        <h2 class="card-title">
+        <h2 class="card-title line-clamp-2">
           {{ blog.title }}
         </h2>
-        <p v-if="!dense">
+        <p v-if="!dense" class="line-clamp-3">
           {{ blog.description }}
         </p>
         <!-- categories -->
@@ -85,6 +85,10 @@ const isNew = computed(() => {
           >
               {{ tag }}
           </div>
+        </div>
+        <!-- Date -->
+        <div v-if="!isHideTime && blog.date" class="mt-auto pt-2 text-xs text-gray-500 dark:text-gray-400">
+          {{ dayjs(blog.date).format('MMM D, YYYY') }}
         </div>
       </div>
     </NuxtLink>

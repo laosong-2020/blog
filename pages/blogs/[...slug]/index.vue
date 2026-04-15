@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { BlogDetail } from '~/types/blogs'
-import { DefaultNuxtImageHeight } from '~/types/blogs'
+import { DefaultNuxtImageHeight, DefaultNuxtImageAlt, DefaultNuxtImageWidth } from '~/types/blogs'
 
 const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
@@ -10,6 +10,15 @@ const { data: page, error } = await useAsyncData<BlogDetail>('page-data', async 
   await queryContent<BlogDetail>(`/blogs/${route.params.slug[0]}`)
     .findOne()
 )
+
+useSeoMeta({
+  title: () => page.value?.title ?? '',
+  ogTitle: () => page.value?.title ?? '',
+  description: () => page.value?.description ?? '',
+  ogDescription: () => page.value?.description ?? '',
+  ogImage: () => page.value?.image?.path ?? 'https://avatars.githubusercontent.com/u/60795200?v=4',
+  ogType: 'article',
+})
 
 onMounted(() => {
   if (route.hash) {
@@ -33,12 +42,9 @@ onMounted(() => {
       <h1 class="text-3xl font-bold mb-4">
         {{ page?.title }}
       </h1>
-      <div class="flex mb-4">
-        <div>
-          <span class="mr-1 capitalize">
-            posted
-          </span>
-        </div>
+      <div class="flex gap-4 mb-4 text-sm text-gray-500 dark:text-gray-400">
+        <span v-if="page?.date">{{ page.date }}</span>
+        <span v-if="page?.readingTime?.text">{{ page.readingTime.text }}</span>
       </div>
       <figure>
         <NuxtImg

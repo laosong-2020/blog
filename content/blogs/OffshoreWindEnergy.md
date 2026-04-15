@@ -1,11 +1,11 @@
 ---
 title: Offshore Wind Energy Site Selection
-Description: Offshore Wind Energy Site Selection
-Date: 2024-04-23
-category:
+description: Offshore Wind Energy Site Selection
+date: '2024-04-23'
+categories:
   - GIS
   - Visualization
-tag:
+tags:
   - Offshore Wind Energy
   - Multi-Criteria
 image: 

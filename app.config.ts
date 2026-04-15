@@ -11,12 +11,12 @@ export default defineAppConfig({
   },
   education: [
     {
-      schoolName: 'Harbing Institute of Technology',
-      schoolLocation: 'Harbin, China',
-      degree: 'B.E in Electronic Engineering',
-      date: 'Sep. 2013 - Jul. 2017',
-      imgSrc: '/logos/HITlogo.png',
-      description: 'GPA: 3.5/4.0',
+      schoolName: 'Texas A&M University',
+      schoolLocation: 'College Station, TX',
+      degree: 'Ph.D in Geographic Information Science and Technology',
+      date: 'Aug. 2021 - Dec. 2025',
+      imgSrc: '/logos/TAMULogo.png',
+      description: 'GPA: 3.8/4.0',
     },
     {
       schoolName: 'Texas A&M University',
@@ -27,15 +27,36 @@ export default defineAppConfig({
       description: 'GPA: 3.8/4.0',
     },
     {
-      schoolName: 'Texas A&M University',
-      schoolLocation: 'College Station, TX',
-      degree: 'Ph.D in Geographic Information Science and Technology',
-      date: 'Aug. 2021 - Present',
-      imgSrc: '/logos/TAMULogo.png',
-      description: 'GPA: 3.8/4.0',
-    }
+      schoolName: 'Harbing Institute of Technology',
+      schoolLocation: 'Harbin, China',
+      degree: 'B.E in Electronic Engineering',
+      date: 'Sep. 2013 - Jul. 2017',
+      imgSrc: '/logos/HITlogo.png',
+      description: 'GPA: 3.5/4.0',
+    },
   ],
   experience: [
+    {
+      companyName: 'Esri',
+      companyLocation: 'Redlands, CA',
+      position: 'Product Engineer',
+      date: 'Jan. 2026 - Present',
+      imgSrc: '/logos/Esri-Logo.wine.svg',
+      description: [
+      ],
+    },
+    {
+      companyName: 'Texas A&M University',
+      companyLocation: 'College Station, TX',
+      position: 'Graduate Research Assistant',
+      date: 'Aug. 2021 - Dec. 2025',
+      imgSrc: '/logos/TAMULogo.png',
+      description: [
+        "Conducted research on geographic information systems and their applications.",
+        "Published papers in peer-reviewed journals.",
+        "Presented findings at international conferences."
+      ],
+    },
     {
       companyName: 'Huawei Technologies',
       companyLocation: 'Shanghai, China',

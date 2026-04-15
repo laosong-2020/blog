@@ -5,7 +5,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <div class="drawer lg:draw-open">
+  <div class="drawer lg:drawer-open">
     <input
       id="default-layout-drawer"
       type="checkbox"
@@ -25,6 +25,6 @@ const route = useRoute();
 
 <style>
 section {
-  @apply max-w-7xl mx-auto px-2 lg:px-0 lg:py-4;
+  @apply max-w-7xl mx-auto px-4 lg:px-6 py-6;
 }
 </style>

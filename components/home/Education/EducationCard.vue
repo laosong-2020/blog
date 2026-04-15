@@ -1,34 +1,34 @@
 <script setup lang="ts">
 import type { Education } from '~/types/education'
-const appConfig = useAppConfig()
-const Props = defineProps<{
+defineProps<{
   eduInfo: Education
 }>()
+const open = ref(false)
 </script>
 <template>
-  <div class="card rounded mx-16 hover:scale-105 transition ease-in-out duration-300 shadow-xl bg-base-200 rounded-xl">
-    <div class="flex justify-center items-center">
-        <div class="basis-1/4">
-          <NuxtImg
-            class="aspect-auto rounded-full w-40"
-            :src="eduInfo.imgSrc"/>
-        </div>
-        <div class="basis-1/2">
-          <div tabindex="0" class="collapse collapse-plus">
-            <input type="checkbox" className="peer" />
-            <div class="collapse-title">
-              <div class="flex flex-col justify-center items-start">
-                <p class="text-3xl font-bold text-gray-800 dark:text-gray-200">{{ eduInfo.schoolName }}</p>
-                <p class="pb-4 text-base font-normal text-gray-700 dark:text-gray-200 opacity-75">{{ eduInfo.schoolLocation }}</p>
-                <p class="text-xl font-semibold text-gray-800 dark:text-gray-200">{{ eduInfo.degree }}</p>
-                <p class="text-xl font-medium text-gray-800 dark:text-gray-200">{{ eduInfo.date }}</p>
-              </div>
-            </div>
-            <div class="collapse-content"> 
-              <p>{{ eduInfo.description }}</p>
-            </div>
-          </div>
-        </div>
+  <div
+    class="py-5 cursor-pointer hover:bg-base-200/50 transition-colors duration-150 -mx-2 px-2 rounded-lg"
+    @click="open = !open"
+  >
+    <div class="flex items-start gap-4">
+      <div class="flex-shrink-0 w-28 h-28 rounded-xl bg-base-200 flex items-center justify-center p-2.5 ring-1 ring-base-300">
+        <NuxtImg
+          class="w-full h-full object-contain"
+          :src="eduInfo.imgSrc"
+          :alt="eduInfo.schoolName"
+        />
       </div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-baseline justify-between gap-2">
+          <p class="text-3xl font-semibold">{{ eduInfo.schoolName }}</p>
+          <p class="text-lg text-base-content/60 flex-shrink-0">{{ eduInfo.date }}</p>
+        </div>
+        <p class="text-xl text-base-content/80">{{ eduInfo.degree }}</p>
+        <p class="text-lg text-base-content/60 mt-0.5">{{ eduInfo.schoolLocation }}</p>
+      </div>
+    </div>
+    <div v-if="open" class="mt-3 ml-32 text-lg text-base-content/75 leading-relaxed">
+      {{ eduInfo.description }}
+    </div>
   </div>
 </template>
