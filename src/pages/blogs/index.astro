@@ -1,0 +1,43 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro'
+import BlogFilter from '../../components/blog/BlogFilter'
+import { getCollection } from 'astro:content'
+
+const allBlogs = await getCollection('blog')
+const sorted = allBlogs.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+)
+
+const posts = sorted.map((blog) => ({
+  slug: blog.slug,
+  title: blog.data.title,
+  description: blog.data.description,
+  date: blog.data.date,
+  image: blog.data.image,
+  categories: blog.data.categories,
+  tags: blog.data.tags,
+}))
+
+const allCategories = [...new Set(posts.flatMap((p) => p.categories ?? []))]
+const allTags = [...new Set(posts.flatMap((p) => p.tags ?? []))]
+---
+
+<BlogLayout title="Blog">
+  <main class="max-w-4xl lg:max-w-5xl mx-auto px-6 py-12">
+
+    <div class="mb-10">
+      <h1 class="text-2xl font-bold tracking-tight">Blog</h1>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+        Articles on GIS, engineering, and research.
+      </p>
+    </div>
+
+    <BlogFilter
+      client:load
+      posts={posts}
+      allCategories={allCategories}
+      allTags={allTags}
+    />
+
+  </main>
+</BlogLayout>

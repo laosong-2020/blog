@@ -1,0 +1,121 @@
+---
+import { getCollection } from 'astro:content'
+import BlogLayout from '../../layouts/BlogLayout.astro'
+
+export async function getStaticPaths() {
+  const blogs = await getCollection('blog')
+  return blogs.map((blog) => ({
+    params: { slug: blog.slug },
+    props: { blog },
+  }))
+}
+
+const { blog } = Astro.props
+const { Content, headings } = await blog.render()
+---
+
+<BlogLayout title={blog.data.title} description={blog.data.description}>
+  <div class="max-w-5xl mx-auto px-6 py-10">
+
+    <!-- Post header: full width -->
+    <header class="mb-10 max-w-3xl">
+      <div class="flex items-center gap-2 mb-4 flex-wrap">
+        <span class="text-xs text-gray-400 dark:text-gray-500">{blog.data.date}</span>
+        {blog.data.categories && blog.data.categories.map((cat) => (
+          <span class="text-xs px-2 py-0.5 rounded-full bg-accent-muted text-accent font-medium">
+            {cat}
+          </span>
+        ))}
+        {blog.data.tags && blog.data.tags.map((tag) => (
+          <span class="text-xs px-2 py-0.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400">
+            {tag}
+          </span>
+        ))}
+      </div>
+      <h1 class="text-3xl font-bold tracking-tight leading-snug">{blog.data.title}</h1>
+      {blog.data.description && (
+        <p class="text-gray-500 dark:text-gray-400 mt-3 text-base leading-relaxed">
+          {blog.data.description}
+        </p>
+      )}
+      {blog.data.image && (
+        <div class="mt-8 overflow-hidden rounded-xl max-w-none">
+          <img
+            src={blog.data.image.path}
+            alt={blog.data.image.alt || blog.data.title}
+            class="w-full object-cover"
+          />
+        </div>
+      )}
+    </header>
+
+    <!-- Content: article + sticky TOC sidebar -->
+    <div class="lg:grid lg:grid-cols-[1fr_220px] lg:gap-12">
+
+      <!-- Main column -->
+      <div>
+        <!-- TOC: mobile only (inline, before article) -->
+        {headings.length > 0 && (
+          <nav class="lg:hidden mb-8 p-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/60 dark:bg-gray-900/60">
+            <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Contents</p>
+            <ul class="space-y-1.5">
+              {headings.map((h) => (
+                <li style={`padding-left: ${(h.depth - 1) * 14}px`}>
+                  <a
+                    href={`#${h.slug}`}
+                    class="text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors"
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
+        <!-- Article content -->
+        <article class="prose dark:prose-invert max-w-none
+          prose-headings:font-semibold prose-headings:tracking-tight
+          prose-a:text-accent prose-a:no-underline hover:prose-a:underline
+          prose-code:before:content-none prose-code:after:content-none
+          prose-pre:rounded-xl prose-img:rounded-xl
+        ">
+          <Content />
+        </article>
+      </div>
+
+      <!-- Sticky TOC sidebar: desktop only -->
+      {headings.length > 0 && (
+        <aside class="hidden lg:block">
+          <div class="sticky top-[4.5rem] max-h-[calc(100vh-6rem)] overflow-y-auto">
+            <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-4">Contents</p>
+            <ul class="space-y-2">
+              {headings.map((h) => (
+                <li style={`padding-left: ${(h.depth - 1) * 12}px`}>
+                  <a
+                    href={`#${h.slug}`}
+                    class="text-[13px] leading-snug text-gray-500 dark:text-gray-400 hover:text-accent dark:hover:text-accent transition-colors block py-0.5"
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+      )}
+
+    </div>
+
+    <!-- Footer nav -->
+    <div class="mt-16 pt-8 border-t border-gray-100 dark:border-gray-800 max-w-3xl">
+      <a
+        href="/blogs"
+        class="text-sm text-gray-500 dark:text-gray-400 hover:text-accent transition-colors"
+      >
+        ← All posts
+      </a>
+    </div>
+
+  </div>
+</BlogLayout>

@@ -1,0 +1,34 @@
+---
+import { profile } from '../../data/portfolio'
+import { Github, Linkedin, Mail } from 'lucide-react'
+---
+
+<footer class="border-t border-gray-100 dark:border-gray-800/80">
+  <div class="max-w-4xl mx-auto px-6 py-8 flex items-center justify-center gap-5">
+    <a
+      href={profile.socials.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub"
+      class="text-gray-400 hover:text-accent dark:text-gray-500 dark:hover:text-accent transition-colors"
+    >
+      <Github size={20} />
+    </a>
+    <a
+      href={profile.socials.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+      class="text-gray-400 hover:text-accent dark:text-gray-500 dark:hover:text-accent transition-colors"
+    >
+      <Linkedin size={20} />
+    </a>
+    <a
+      href={`mailto:${profile.email}`}
+      aria-label="Email"
+      class="text-gray-400 hover:text-accent dark:text-gray-500 dark:hover:text-accent transition-colors"
+    >
+      <Mail size={20} />
+    </a>
+  </div>
+</footer>

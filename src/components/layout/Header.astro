@@ -1,0 +1,45 @@
+---
+import ThemeToggle from './ThemeToggle'
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/blogs', label: 'Blog' },
+]
+
+const { pathname } = Astro.url
+---
+
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200/70 dark:border-gray-800/70">
+  <div class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+
+    <a
+      href="/"
+      class="text-sm font-semibold text-gray-900 dark:text-gray-100 hover:text-accent transition-colors"
+    >
+      Zhenlei Song
+    </a>
+
+    <nav class="flex items-center">
+      {navLinks.map(({ href, label }) => {
+        const isActive = href === '/'
+          ? pathname === '/'
+          : pathname.startsWith(href)
+        return (
+          <a
+            href={href}
+            class:list={[
+              'px-3 py-1.5 rounded-md text-sm transition-colors',
+              isActive
+                ? 'text-accent font-medium'
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800/50',
+            ]}
+          >
+            {label}
+          </a>
+        )
+      })}
+      <ThemeToggle client:load />
+    </nav>
+
+  </div>
+</header>

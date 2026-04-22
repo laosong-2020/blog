@@ -1,0 +1,42 @@
+---
+import '../styles/global.css'
+import Header from '../components/layout/Header.astro'
+import Footer from '../components/layout/Footer.astro'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = 'Zhenlei Song — Portfolio',
+  description = 'PhD in GIScience & Technology, Product Engineer at Esri. Personal portfolio and blog.',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Dark mode init: runs before paint to prevent flash -->
+    <script is:inline>
+      ;(function () {
+        const stored = localStorage.getItem('theme')
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
+  </head>
+  <body class="min-h-screen transition-colors duration-200">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

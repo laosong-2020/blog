@@ -1,42 +1,38 @@
 {
   "name": "blog",
+  "type": "module",
   "private": true,
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi build",
-    "generate": "nuxi generate",
-    "preview": "nuxi preview",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint . --ext .vue,.ts,.js --ignore-path .gitignore",
-    "lint:fix": "ESLINT_USE_FLAT_CONFIG=false eslint . --ext .vue,.ts,.js --ignore-path .gitignore --fix",
-    "type-check": "nuxi typecheck"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
-    "@nuxt/content": "^2.12.1",
-    "@nuxt/image": "^2.0.0",
-    "@nuxtjs/color-mode": "^3.4.0",
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "@tailwindcss/typography": "^0.5.12",
-    "@traptitech/markdown-it-katex": "^3.6.0",
-    "dayjs": "^1.11.10",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.3",
+    "@tailwindcss/typography": "^0.5.15",
+    "astro": "^4.16.18",
     "katex": "^0.16.10",
-    "nuxt-icon": "^0.6.10",
-    "sitemap": "^9.0.1",
-    "vue3-lottie": "^3.3.0"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp"
-    ]
+    "lucide-react": "^0.454.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.3.10",
-    "@types/node": "^20.12.7",
-    "daisyui": "^4.10.2",
-    "eslint": "^9.1.1",
-    "nuxt": "^3.11.2",
-    "rehype-katex": "^7.0.0",
-    "release-it": "^17.2.0",
-    "remark-math": "^6.0.0",
-    "typescript": "^5.4.5"
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "jsdom": "^29.0.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.9"
   }
 }

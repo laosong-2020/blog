@@ -1,12 +1,11 @@
 node_modules
 *.log*
-.nuxt
-.nitro
 .cache
 .output
-.env
 dist
+.env
 .DS_Store
+.astro
 
 # Yarn
 .yarn/cache
@@ -14,3 +13,7 @@ dist
 
 # Local History
 .history
+
+# Claude
+.claude/
+CLAUDE.md
