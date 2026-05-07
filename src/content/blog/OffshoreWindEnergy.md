@@ -9,7 +9,7 @@ tags:
   - Offshore Wind Energy
   - Multi-Criteria
 image: 
-  path: /blog-imgs/OSWE_1.jpg
+  path: https://blog-image.gongdalaosong.com/blog-imgs/OSWE_1.jpg
   width: 800
   height: 500
   alt: cover
@@ -135,7 +135,7 @@ $$
 
 # Methodology
 ## Study Area
-![Study Area](/blog-imgs/FinalWEAs.png)
+![Study Area](https://blog-image.gongdalaosong.com/blog-imgs/FinalWEAs.png)
 
 On 18 August 2016, the federal Bureau of Ocean Energy Management (BOEM) published a Request for Interest in California Offshore Wind in response to an unsolicited lease request. Two years later, BOEM published a Call for Information and Nominations from companies interested in commercial wind energy leases within the proposed areas of central and northern California (BOEM 2018). In addition, BOEM sought public input on the potential for wind energy development in the Call Areas. On 25 May 2021, the Departments of the Interior and Defense and the State of California announced their agreement to advance areas for wind energy development offshore the northern and central coasts of California, enabling a path forward for the Humboldt Call Area and areas within and adjacent to the Morro Bay Call Area. BOEM published the Morro Bay East and West Extensions—Call for Information and Nominations in the Federal Register, which initiated a forty-five1-day public comment period. BOEM accepted industry nominations and public comments until 13 September 2021. The coastal fishing region in the Pacific California area was divided into 615 equal segments, each approximately 550 km2. This specific area dimension was derived from the average of three proposed call areas from 2018 (BOEM 2018). Consequently, each polygon can symbolize a prospective call area.
 
@@ -158,26 +158,26 @@ This project was developed based on the National Science Foundation–funded Con
 
 By generating multiple (more than 8,000) random weight combinations, we did a mixed qualitative–quantitative study of multiple regions, including existing call areas. We found among all weight combinations as input, a higher focus on nonfishery criteria (e.g., wind speed, etc.) is highly positively correlated with a higher suitability score for the existing northern California call area near Eureka. To be quantitative, to position the Eureka call area in the top 5 percent of the suitability score, the weighting strategy required scaling the nonfisheries weight sum to approximately three times the sum of the fisheries weights.
 
-![Result for Research Question 1](/blog-imgs//Results_1.jpg)
+![Result for Research Question 1](https://blog-image.gongdalaosong.com/blog-imgs/Results_1.jpg)
 
-![Result for Research Question 1](/blog-imgs//Results_1_2.jpg)
+![Result for Research Question 1](https://blog-image.gongdalaosong.com/blog-imgs/Results_1_2.jpg)
 
 ## For Research Question 2
 
 The proposed study categorizes the seven evaluation criteria into two distinct classifications. Category 1 (C1) encompasses parameters such as wind speed at a 90-m height, distance from the shoreline, proximity to military installations, and distance from marine nature reserves. These parameters primarily cater to the interests of energy planning authorities that aim to enhance the operational efficiency of wind turbines and curtail costs associated with construction and operation. Category 2 (C2) incorporates parameters like fishing statistics from 2019 to 2021 that are predominantly of concern to corporate executives and research scholars. The primary objective of this research is to model and visualize the trade-offs between fisheries and offshore wind farms to assist the decision-making process in constructing a new offshore wind site. Table 3 demonstrates a simulated weight matrix for the MCDM model. The study constructed five distinct sets (L1–L5) with a total of ten alternative strategies (L1_a–L5_b), each to showcase an array of decision-making strategies. Each set embodies unique weight ratios, which signify diverse weight allocations for the two types of parameters, with each alternative within the set demonstrating distinct weight distribution among parameters within the same category. To provide an illustrative example, decision alternatives L1_a and L4_b possess divergent weight allocations. L1_a attributes 90 percent and 10 percent weights to categories C1 and C2, respectively, maintaining a uniform weight distribution within the corresponding parameter groups. Conversely, L4_b assigns 60 percent and 40 percent weights to categories C1 and C2, respectively, with weight distributions of (7:7:3:3) within the parameters of C1 and (1:2:3) within the parameters of C2.
-![Weight Table](/blog-imgs//WeightsTable.png)
-![Result for Research Question 2](/blog-imgs//Results_2.jpg)
+![Weight Table](https://blog-image.gongdalaosong.com/blog-imgs/WeightsTable.png)
+![Result for Research Question 2](https://blog-image.gongdalaosong.com/blog-imgs/Results_2.jpg)
 
 # Discussion
 In this section, the previously mentioned methods and conclusions are validated and evaluated mainly using sensitivity analysis ___(Simanaviciene and Ustinovichius 2010)___.
 
 To illustrate how different criteria affect decision model outputs, we conducted a sensitivity analysis of all `MCDM` models using an open-sourced Python Library SALib ___(Herman and Usher 2017; Iwanaga, Usher, and Herman 2022)___. The `AHP` method is particularly suited to capturing user inputs and converting them into combinations of weights; we executed a statistical evaluation of the outcomes from both first- and second-order `sensitivity analyses`. These analyses were derived using two `MCDA` algorithmic models, namely the `WASPAS` and `TOPSIS`. In sensitivity analysis, the first-order sensitivity index ***(`S1` value)*** quantifies the impact of an individual criterion on the ultimate outcome, taking both the data and the model into account. As such, the `S1` value in an MCDA model generally displays a strong positive correlation with its corresponding weight value. The correlation between the `S1` values and their respective weight values under the `WASPAS` and `TOPSIS` models is illustrated in the following figure. The graphical representations indicate that both `S1` values maintain a roughly linear positive correlation with weight values. The `WASPAS` method, however, offers a superior linear fit between `S1` values and weights as compared to the `TOPSIS` method. This implies that the influence of a single criterion overall is more diffused in the `TOPSIS` model.
 
-![S1 Scores](/blog-imgs//S1_Score.png)
+![S1 Scores](https://blog-image.gongdalaosong.com/blog-imgs/S1_Score.png)
 
 In `sensitivity analysis`, although the first-order sensitivity index (`S1`) quantifies the impact of individual criteria on the outcome, the second-order sensitivity index (`S2`) gauges the combined influence of pairs of criteria. To visualize these `S2` values for the two employed algorithms, we construct two upper triangular matrices, as illustrated by the heat map in the following Figure. Notably, all `S2` values are less than ***$10^{–3}$***, suggesting negligible interdependence between criteria. The homogeneity of these values further underscores the absence of data redundancy and criterion interdependence in our selection and regression processes. In the future, more indicators, including sea water temperature, sea floor depth, and habitat movement data, could be combined into this proposed `MCDM` model to achieve compatibility for different groups of stakeholders. The flexibility and portability of this application make it adaptable to other geographic regions.
 
-![S2 Scores](/blog-imgs//S2_Score.png)
+![S2 Scores](https://blog-image.gongdalaosong.com/blog-imgs/S2_Score.png)
 
 # Conlcusion
 In this study, we implemented a Web-based spatial decision support framework, which integrated three types of `MCDA` models (`WASPAS`, `AHP`, and `TOPSIS`), and various indicators important in making decisions on offshore wind energy site selection and fishery landing statistics ___(California Department of Fish and Wildlife 2022)___ to enable a more efficient spatial decision-making process. There are three major advantages of this `MCDM`. First, this proposed framework enables multivariate spatial data analytics by which multiple types of data sets can be combined into a single spatial decision-making platform. Second, conflicting decision goals are common issues in offshore wind energy plant site selection. In this article, besides the multicriteria baseline decision model (`WSM`), two types of `MCDM` models (`AHP` and `TOPSIS`) were adopted, where indirect decision criteria can be combined to meet several objectives and aid in complex decision-making problems. Third, this application supports collaborative decision-making by developing an interactive user interface in that users can assign weights for different criteria to reach a common goal in energy and fishery management. This tool provides a communication bridge between decision-makers and practitioners in the fishery and wind energy fields to help them develop more sustainable management strategies.
