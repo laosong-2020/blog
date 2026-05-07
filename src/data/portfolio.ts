@@ -15,8 +15,8 @@ export const education = [
     schoolLocation: 'College Station, TX',
     degree: 'Ph.D in Geographic Information Science and Technology',
     date: 'Aug. 2021 - Dec. 2025',
-    imgSrc: 'https://blog-image.gongdalaosong.com/logos/TAMULogo.png',
-    imgSrcDark: '/logos/TAMULogo.png',   // replace with dark variant when ready
+    imgSrc: 'https://blog-image.gongdalaosong.com/logos/RBG-TAM-MaroonBox.svg',
+    imgSrcDark: 'https://blog-image.gongdalaosong.com/logos/RBG-TAM-White.svg',   // replace with dark variant when ready
     description: 'GPA: 3.8/4.0',
   },
   {
@@ -24,8 +24,8 @@ export const education = [
     schoolLocation: 'College Station, TX',
     degree: 'M.S in Electronic Engineering',
     date: 'Jan. 2020 - May. 2021',
-    imgSrc: 'https://blog-image.gongdalaosong.com/logos/TAMULogo.png',
-    imgSrcDark: '/logos/TAMULogo.png',
+    imgSrc: 'https://blog-image.gongdalaosong.com/logos/RBG-TAM-MaroonBox.svg',
+    imgSrcDark: 'https://blog-image.gongdalaosong.com/logos/RBG-TAM-White.svg',
     description: 'GPA: 3.8/4.0',
   },
   {
@@ -34,7 +34,7 @@ export const education = [
     degree: 'B.E in Electronic Engineering',
     date: 'Sep. 2013 - Jul. 2017',
     imgSrc: 'https://blog-image.gongdalaosong.com/logos/HITlogo.png',
-    imgSrcDark: '/logos/HITlogo.png',
+    imgSrcDark: 'https://blog-image.gongdalaosong.com/logos/HITLogoDark.png',   // replace with dark variant when ready
     description: 'GPA: 3.5/4.0',
   },
 ]
@@ -45,8 +45,8 @@ export const experience = [
     companyLocation: 'Redlands, CA',
     position: 'Product Engineer',
     date: 'Jan. 2026 - Present',
-    imgSrc: 'https://blog-image.gongdalaosong.com/logos/Esri-Logo.wine.svg',
-    imgSrcDark: '/logos/Esri-Logo.wine.svg',
+    imgSrc: 'https://blog-image.gongdalaosong.com/logos/Esri_Logo_Light.svg',
+    imgSrcDark: 'https://blog-image.gongdalaosong.com/logos/Esri_Logo_Dark.svg',
     description: [] as string[],
   },
   {
@@ -54,8 +54,8 @@ export const experience = [
     companyLocation: 'College Station, TX',
     position: 'Graduate Research Assistant',
     date: 'Aug. 2021 - Dec. 2025',
-    imgSrc: 'https://blog-image.gongdalaosong.com/logos/TAMULogo.png',
-    imgSrcDark: '/logos/TAMULogo.png',
+    imgSrc: 'https://blog-image.gongdalaosong.com/logos/RBG-TAM-MaroonBox.svg',
+    imgSrcDark: 'https://blog-image.gongdalaosong.com/logos/RBG-TAM-White.svg',
     description: [
       'Conducted research on geographic information systems and their applications.',
       'Published papers in peer-reviewed journals.',
@@ -67,8 +67,8 @@ export const experience = [
     companyLocation: 'Shanghai, China',
     position: 'Software Development Engineer',
     date: 'Jun. 2018 - Dec. 2019',
-    imgSrc: 'https://blog-image.gongdalaosong.com/logos/HuaweiLogo.png',
-    imgSrcDark: '/logos/HuaweiLogo.png',
+    imgSrc: 'https://blog-image.gongdalaosong.com/logos/Huawei_Logo_Light.svg',
+    imgSrcDark: 'https://blog-image.gongdalaosong.com/logos/Huawei_Logo_Dark.svg',
     description: [
       'Developed LTE/NR L3 program with the focus on the UE mobility algorithm programming (UE access in, intra/inter frequency handover, redirection).',
       'Conducted department continuous integration tasks such as compile scripts maintenance and troubleshooting errors for product-level development.',
@@ -81,7 +81,7 @@ export const experience = [
     position: 'Software Development Engineer',
     date: 'Jul. 2017 - Jun. 2018',
     imgSrc: 'https://blog-image.gongdalaosong.com/logos/SercommLogo.png',
-    imgSrcDark: '/logos/SercommLogo.png',
+    imgSrcDark: 'https://blog-image.gongdalaosong.com/logos/Sercomm_Logo_Dark.svg',
     description: [
       'Developed security camera firmware program. The major task was based on TCP/IP communication.',
       'Led software updating for migrating from H.264 to H.265 protocol.',
